@@ -1,0 +1,14 @@
+<%= form_for(task, html: {class: 'form-box'}) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-title' %>
+
+  <%= f.label :details %>
+  <%= f.text_area :details, class: 'form-details' %>
+
+  <div class="checkbox">
+    <%= f.label :completed %>
+    <%= f.check_box :completed %>
+  </div>
+
+  <%= f.submit "Create/Edit Task" %>
+<% end %>

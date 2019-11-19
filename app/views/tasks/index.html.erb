@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <h1>My tasks</h1>
+    <ul>
+      <% @tasks.each do |task| %>
+        <li>
+          <div class="checkbox">
+            <%= check_box_tag 'check_value', 1, task.completed, disabled: true %>
+            <%= link_to task_path(task) do %>
+              <%= task.title %>
+            <% end %>&nbsp
+            <%= link_to task_path(task), method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="fa fa-trash-o"></i>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+    <%= link_to 'Add a task', new_task_path %>
+  </body>
+</html>

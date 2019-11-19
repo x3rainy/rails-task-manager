@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="header">
+    <div>
+      <h1><%= @task.title %></h1>
+    </div>
+
+    <div id="edit">
+      <%= link_to 'Edit this task', edit_task_path(@task) %>
+    </div>
+  </div>
+
+  <div class="box">
+    <p><%= @task.details %></p>
+  </div>
+
+  <div class="checkbox">
+    <%= check_box_tag 'check_value', 1, @task.completed, disabled: true %>
+    <p>This task is <%= @completed %> completed</p>
+  </div>
+
+  <%= link_to 'Back to list', tasks_path %>
+</div>
